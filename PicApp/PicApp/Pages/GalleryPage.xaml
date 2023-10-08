@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PicApp.Pages.GalleryPage"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="pictureList"
+                      HasUnevenRows="True"
+                      ItemsSource="{Binding PictureList}"
+                      SeparatorVisibility="Default"
+                      RowHeight="60"
+                      CachingStrategy="RecycleElement">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ImageCell
+                           ImageSource="{Binding PathToPicture}"
+                           Text="{Binding NameFile}"
+                           Detail="{Binding CreateDate}"
+                           TextColor="DodgerBlue"
+                           DetailColor="Gray">
+                        </ImageCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Grid ColumnDefinitions="Auto" 
+                  RowDefinitions="45"
+                  Margin="10,15">
+                <Button Text="Открыть"
+                        Clicked="OpenPicrureButton_Clicked"
+                        Grid.Column="1" 
+                        HorizontalOptions="FillAndExpand"/>
+                <Button Text="❌Удалить"
+                        Clicked="RemovePictureButton_Clicked"
+                        Grid.Column="2" 
+                        HorizontalOptions="FillAndExpand"/>
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

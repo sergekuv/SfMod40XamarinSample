@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PicApp.Pages.LoginPage">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+            <Label x:Name="lPin"
+                   FontSize="Title"
+                   Text="Введите PIN-код для регистации:"
+                   HorizontalOptions="Fill" 
+                   VerticalOptions="Center"
+                   Padding="20,0"/>
+            <Entry IsPassword="True" 
+                   x:Name="Password" 
+                   MaxLength="4"
+                   Margin ="20,0"
+                   TextColor="Black" 
+                   Placeholder="PIN"
+                   HorizontalOptions="Fill" 
+                   VerticalOptions="Center"
+                   TextChanged="Password_TextChanged"/>
+            <Label x:Name="lInfoMsg"
+                   FontSize="Small"
+                   TextColor="Red"
+                   VerticalTextAlignment="Center" 
+                   HorizontalTextAlignment="Center"
+                   HorizontalOptions="Fill" 
+                   VerticalOptions="Center"
+                   Padding="20,0"/>
+            <Button x:Name="endPwdButton" 
+                    IsEnabled="False"
+                    Text="Войти" 
+                    Clicked="endPwdButton_Click"
+                    Margin="20,0"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
